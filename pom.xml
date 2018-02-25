@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.jmclabs.rest</groupId>
+	<artifactId>rest-invoker</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>rest-invoker</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<jersey2.version>2.26</jersey2.version>
+		<jackson.version>2.26</jackson.version>
+		<log4j.version>1.2.17</log4j.version>
+		<sl4j.version>1.7.25</sl4j.version>
+		<junit.version>4.12</junit.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<!-- <dependencyManagement> -->
+	<!-- <dependencies> -->
+	<!-- <dependency> -->
+	<!-- <groupId>org.glassfish.jersey</groupId> -->
+	<!-- <artifactId>jersey-bom</artifactId> -->
+	<!-- <version>${jersey2.version}</version> -->
+	<!-- <type>pom</type> -->
+	<!-- <scope>import</scope> -->
+	<!-- </dependency> -->
+	<!-- </dependencies> -->
+	<!-- </dependencyManagement> -->
+
+	<dependencies>
+		<!-- jersey-2.x-Client -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey2.version}</version>
+		</dependency>
+		<!-- Connector HttpClient for connectionManger Pool -->
+		<dependency>
+			<groupId>org.glassfish.jersey.connectors</groupId>
+			<artifactId>jersey-apache-connector</artifactId>
+			<version>${jersey2.version}</version>
+		</dependency>
+		<!-- Jackson serialize -->
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>${jersey2.version}</version>
+		</dependency>
+		<!-- DI fachada de inyección, retrocompatibilidad -->
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>${jersey2.version}</version>
+		</dependency>
+
+		<!-- Loggins -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${sl4j.version}</version>
+		</dependency>
+
+		<!-- Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		
+		 <dependency>
+            <groupId>org.glassfish.jersey.test-framework.providers</groupId>
+            <artifactId>jersey-test-framework-provider-bundle</artifactId>
+            <type>pom</type>
+            <version>${jersey2.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.test-framework</groupId>
+			<artifactId>jersey-test-framework-util</artifactId>
+			<version>${jersey2.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- pruebas de multihilos -->
+		<dependency>
+			<groupId>com.vmlens</groupId>
+			<artifactId>concurrent-junit</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<!-- Race Conditions -->
+
+
+
+	</dependencies>
+</project>
